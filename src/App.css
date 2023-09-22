@@ -1,0 +1,19 @@
+.task{
+    color: #20204d;
+    font-family: cursive;
+    font-weight: 500;
+}
+.custom-class-main {
+    height: 100%;
+}
+.task-list{
+    margin-top: 2px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+}
+.ex-btn{
+    margin: 4px;
+}
