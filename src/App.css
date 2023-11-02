@@ -1,7 +1,12 @@
+body{
+    background-color: rgb(32 32 32);
+    color: white;
+}
 .task{
-    color: #20204d;
+    color: #ffffff;
     font-family: cursive;
     font-weight: 500;
+    margin-left: 20px;
 }
 .custom-class-main {
     height: 100%;
@@ -16,4 +21,14 @@
 }
 .ex-btn{
     margin: 4px;
+    background-color: rgb(255, 255, 255);
+    cursor: pointer;
+}
+.remove-section{
+    display: block;
+    width: 194px;
+    margin: auto;
+}
+.mid-btn{
+    margin-left: 10px;
 }

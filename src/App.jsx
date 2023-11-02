@@ -8,7 +8,6 @@ const App = () => {
   const [task, setTask] = useState([]); // array of objects
   const [EditTask, setEditTask] = useState(false);
   const [EditTask_id, setEditTask_id] = useState(0);
-
   const rm = () => {
     const sure = confirm("Do you want to delete you entire toDo list?");
     if (sure) {
@@ -74,7 +73,7 @@ const App = () => {
   return (
     <>
       <AppContext.Provider value={{ addTask, val }}>
-        <div className=" custom-class-main position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-body-tertiary">
+        <div className=" custom-class-main position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center">
           <h2 className="my-1 mx-5">Make your To Do List 📝</h2>
           <input
             className="my-1 mx-2"
@@ -88,14 +87,14 @@ const App = () => {
             name={EditTask ? "Submit" : "Add"}
             whatToDo={EditTask ? editTasks : addTasks}
           />
-
           {task.map((currElem, index) => {
             return (
               <div className="task-list" key={index}>
-                <p className="task">
+                <h3 className="task">
                   {" "}
                   {index + 1 + "."} {currElem.name}{" "}
-                </p>
+                </h3>
+                <span className="mid-btn">
                 <button
                   className="ex-btn"
                   onClick={() => editTask(currElem.id, currElem.name)}
@@ -110,23 +109,25 @@ const App = () => {
                   {" "}
                   delete{" "}
                 </button>
+                </span>
               </div>
             );
           })}
+        </div>
+        <span className="remove-section">
           <button
             className="btn btn-danger rounded-pill px-2 my-1 mx-5"
             onClick={() => rm()}
-          >
+            >
             {" "}
             Remove{" "}
           </button>
-        </div>
+        </span>
       </AppContext.Provider>
     </>
   );
 };
 
-const EditButton = () => {};
 
 export const AddBtn = ({ name, whatToDo }) => {
   const { addTask, val } = useContext(AppContext);
